@@ -9,7 +9,8 @@
   "author": "Sudarshana Dayananda",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "mongoose": "^5.3.12"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
