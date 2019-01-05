@@ -5,7 +5,9 @@ export const userRouter = express.Router();
 
 userRouter.route('/')
     .get(userController.findUser)
-    .post(userController.createUser);
+    .post(userController.createUser)
+    .put(userController.updateUser)
+    .delete(userController.deleteUser);
 
 userRouter.route('/all')
     .get(userController.findUsers);

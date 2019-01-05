@@ -2,7 +2,7 @@ import User from './user.model';
 
 const EXISTS = 'EXISTS';
 const SUCCESS = 'SUCCESS';
-const ERROR = 'ERROR';
+const FAILED = 'FAILED';
 const NOT_FOUND = 'NOT_FOUND';
 
 export default {
@@ -54,6 +54,50 @@ export default {
             }
         } catch (error) {
 
+            return res.status(500).send(error);
+        }
+    },
+
+    // Update user
+    async updateUser(req, res) {
+
+        try {
+
+            let user = {
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                age: req.body.age,
+            };
+            const updatedUser = await User.findOneAndUpdate({ _id: req.body.id }, user, { new: true });
+            if (updatedUser) {
+
+                return res.send({ message : SUCCESS, data: updatedUser });
+            } else {
+
+                return res.send({ message: FAILED });
+            }            
+        } catch (error) {
+
+            return res.status(500).send(error);
+        }
+    },
+
+    // Delete user by Id
+    async deleteUser(req, res) {
+
+        try {
+
+            const deletedUser = await User.findByIdAndRemove(req.query.id)
+            if (deletedUser) {
+
+                return res.send({ message : SUCCESS });
+            } else {
+
+                return res.send({ message: FAILED });
+            }
+            
+        } catch (error) {
+            
             return res.status(500).send(error);
         }
     }
