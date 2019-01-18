@@ -66,9 +66,10 @@ export default {
             let user = {
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
+                email: req.body.email,
                 age: req.body.age,
             };
-            const updatedUser = await User.findOneAndUpdate({ _id: req.body.id }, user, { new: true });
+            const updatedUser = await User.findOneAndUpdate({ _id: req.body._id }, user, { new: true });
             if (updatedUser) {
 
                 return res.send({ message : SUCCESS, data: updatedUser });

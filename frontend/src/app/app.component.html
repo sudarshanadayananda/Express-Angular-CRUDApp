@@ -5,8 +5,8 @@
 </div>
 
 <div style="padding: 20px;">
-  <button data-toggle="modal" data-target="#exampleModal" type="button" class="btn btn-success"
-          (click)="onAddClick()">Add User
+  <button data-toggle="modal" data-target="#exampleModal" type="button" class="btn btn-success">
+    Add User
   </button>
 </div>
 
@@ -15,7 +15,10 @@
 
     <thead class="thead-dark">
     <tr>
-      <th scope="col">Name</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Age</th>
       <th scope="col">Edit</th>
       <th scope="col">Delete</th>
     </tr>
@@ -24,17 +27,20 @@
     <tbody>
     <tr *ngFor="let user of users">
 
-      <td>{{user.name}}</td>
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.age}}</td>
 
       <td>
         <button data-toggle="modal" data-target="#exampleModal" type="button" class="btn btn-primary"
-                (click)="onEditClick(user)">Edit
+                (click)="onEditClickHandler(user)">Edit
         </button>
       </td>
 
       <td>
         <button type="button" class="btn btn-danger"
-                (click)="deleteUser(user)">Delete
+                (click)="deleteUserHandler(user)">Delete
         </button>
       </td>
     </tr>
@@ -53,11 +59,14 @@
         </button>
       </div>
       <div class="modal-body">
-        <input type="text" class="form-control" placeholder="Name" [(ngModel)]="currentUserName">
+        <input type="text" style="margin: 10px 0;" class="form-control" placeholder="First Name" [(ngModel)]="firstName">
+        <input type="text" style="margin: 10px 0;" class="form-control" placeholder="Last Name" [(ngModel)]="lastName">
+        <input type="text" style="margin: 10px 0;" class="form-control" placeholder="Email" [(ngModel)]="email">
+        <input type="text" style="margin: 10px 0;" class="form-control" placeholder="Age" [(ngModel)]="age">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onModalClose()">Save</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onModalCloseHandler()">Save</button>
       </div>
     </div>
   </div>
