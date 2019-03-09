@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { environment as ENV } from '../../environments/environment';
-import { Observable } from 'rxjs/Observable';
-import { catchError, map,  } from 'rxjs/operators';
-import { of  } from 'rxjs/observable/of';
+import { Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 const httpOptions = {
   headers: new HttpHeaders(

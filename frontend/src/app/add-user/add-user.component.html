@@ -1,0 +1,27 @@
+<div class="width-75">
+  <h2 class="title">Add/Edit User</h2>
+  <form class="example-form">
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Email" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="First Name" [(ngModel)]="user.firstName" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Last Name" [(ngModel)]="user.lastName" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Age" [(ngModel)]="user.age" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+
+    <div class="btn-container">
+      <button class="button" mat-raised-button (click)="onCancelClickHandler()">Cancel</button>
+      <button class="button" mat-raised-button color="primary" (click)="onSaveClickHandler()">Save</button>
+    </div>
+
+  </form>
+</div>

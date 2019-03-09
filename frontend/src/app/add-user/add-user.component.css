@@ -1,0 +1,19 @@
+.width-75 {
+    width: 75vw;
+}
+.full-width {
+    width: 100%;
+}
+.title {
+    margin: 0 0 50px 0;
+    font-family: 'Roboto', sans-serif;
+}
+.btn-container {
+    right: 0;
+    float: right;
+}
+.button {
+    text-transform: uppercase;
+    margin: 10px;
+    font-family: 'Roboto', sans-serif;
+}
