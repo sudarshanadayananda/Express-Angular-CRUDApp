@@ -4,7 +4,7 @@
   "description": "sample express application",
   "main": "app.js",
   "scripts": {
-    "start": "babel-node app.js"
+    "start": "nodemon app.js --exec babel-node --presets babel-preset-env"
   },
   "author": "Sudarshana Dayananda",
   "license": "ISC",
@@ -15,7 +15,9 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.7.0"
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
+    "nodemon": "^1.18.10"
   }
 }
